@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 const contactLinks = [
@@ -47,6 +48,10 @@ const contactLinks = [
 export default function Contacto() {
   return (
     <div className="max-w-2xl mx-auto px-4 py-16 animate-fade-in">
+      <Helmet>
+        <title>Contacto | Jolie Vie</title>
+        <meta name="description" content="Escribinos por WhatsApp o redes sociales. Estamos para ayudarte con tu pedido de Jolie Vie." />
+      </Helmet>
       <div className="mb-12">
         <h1 className="font-playfair text-3xl font-bold text-brown mb-2">Contacto</h1>
         <p className="font-alegreya italic text-brown/50">Encontranos en nuestras redes o escribinos directamente.</p>

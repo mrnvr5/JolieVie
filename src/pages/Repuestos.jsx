@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState } from 'react'
 import { useCart } from '../context/CartContext'
 
@@ -125,6 +126,10 @@ function RepuestoCard({ repuesto }) {
 export default function Repuestos() {
   return (
     <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20 animate-fade-in">
+      <Helmet>
+        <title>Repuestos para libretas | Jolie Vie Costa Rica</title>
+        <meta name="description" content="Repuestos y recargas para tus libretas Jolie Vie. Hojas lisas, rayadas y más." />
+      </Helmet>
       <div className="mb-8 md:mb-12">
         <p className="font-alegreya-sc font-bold text-brown/50 text-xs tracking-widest uppercase mb-2">Recargas</p>
         <h1 className="font-playfair text-2xl md:text-3xl font-bold text-brown">Repuestos de libretas</h1>

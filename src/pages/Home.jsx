@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 import ProductCard from '../components/ProductCard'
 import TestimonialsCarousel from '../components/TestimonialsCarousel'
@@ -52,6 +53,10 @@ const products = [
 export default function Home() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Jolie Vie | Libretas y accesorios personalizados en Costa Rica</title>
+        <meta name="description" content="Libretas, agendas y accesorios de cuero personalizados hechos en Costa Rica. Enviamos por Correos de Costa Rica y Uber Flash." />
+      </Helmet>
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-center justify-center px-4 overflow-hidden">
         <img src="/portada1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />

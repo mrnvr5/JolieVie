@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
@@ -38,6 +39,10 @@ export default function Login() {
 
   return (
     <div className="min-h-screen bg-cream flex items-center justify-center px-4 py-12 animate-fade-in">
+      <Helmet>
+        <title>Mi cuenta | Jolie Vie</title>
+        <meta name="description" content="Iniciá sesión o creá tu cuenta en Jolie Vie." />
+      </Helmet>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
         {/* Logo */}
         <div className="text-center mb-6">

@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
@@ -44,6 +45,10 @@ function FAQItem({ q, a }) {
 export default function FAQ() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 animate-fade-in">
+      <Helmet>
+        <title>Preguntas frecuentes | Jolie Vie</title>
+        <meta name="description" content="Resolvemos tus dudas sobre pedidos, personalización, envíos y métodos de pago de Jolie Vie." />
+      </Helmet>
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start">
 
         {/* Left — content */}

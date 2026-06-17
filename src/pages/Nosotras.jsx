@@ -1,8 +1,13 @@
+import { Helmet } from 'react-helmet-async'
 import { Link } from 'react-router-dom'
 
 export default function Nosotras() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Nosotras | Jolie Vie</title>
+        <meta name="description" content="Conocé la historia detrás de Jolie Vie, marca costarricense de libretas y accesorios de cuero personalizados." />
+      </Helmet>
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-14">
           <h1 className="font-playfair text-3xl md:text-4xl font-bold text-brown mb-3">Sobre nosotras</h1>

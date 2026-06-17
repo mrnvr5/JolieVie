@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import TestimonialsCarousel from '../components/TestimonialsCarousel'
 import { useCart } from '../context/CartContext'
 
@@ -64,6 +65,10 @@ function AccesorioCard({ acc }) {
 export default function Accesorios() {
   return (
     <div className="animate-fade-in">
+      <Helmet>
+        <title>Accesorios de cuero | Jolie Vie Costa Rica</title>
+        <meta name="description" content="Carpetas, cuadernos de acuarela y planificadores de cuero. Accesorios personalizados hechos en Costa Rica." />
+      </Helmet>
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20">
 
         {/* Header */}

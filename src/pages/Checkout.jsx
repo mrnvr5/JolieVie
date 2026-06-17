@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
@@ -185,6 +186,10 @@ export default function Checkout() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-10 animate-fade-in">
+      <Helmet>
+        <title>Confirmar pedido | Jolie Vie</title>
+        <meta name="description" content="Completá tu pedido de libretas y accesorios Jolie Vie." />
+      </Helmet>
       <h1 className="font-playfair text-3xl font-bold text-brown mb-8">Confirmar pedido</h1>
 
       <div className="grid md:grid-cols-2 gap-10 md:gap-12">

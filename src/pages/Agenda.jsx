@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useForm } from 'react-hook-form'
 
 const WHATSAPP_NUMBER = '50687335115'
@@ -18,6 +19,10 @@ export default function Agenda() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 animate-fade-in">
+      <Helmet>
+        <title>Agendas personalizadas | Jolie Vie Costa Rica</title>
+        <meta name="description" content="Agendas de cuero personalizadas hechas en Costa Rica. Organizá tu vida con estilo." />
+      </Helmet>
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start">
         {/* Left — Photo */}
         <div className="rounded-2xl overflow-hidden md:sticky md:top-24">

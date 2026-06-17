@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { HelmetProvider } from 'react-helmet-async'
 import { CartProvider } from './context/CartContext'
 import Navbar from './components/Navbar'
 import CartSidebar from './components/CartSidebar'
@@ -19,6 +20,7 @@ export default function App() {
   const [searchOpen, setSearchOpen] = useState(false)
 
   return (
+    <HelmetProvider>
     <BrowserRouter>
       <CartProvider>
         <div className="min-h-screen bg-cream font-alegreya text-brown">
@@ -42,5 +44,6 @@ export default function App() {
         </div>
       </CartProvider>
     </BrowserRouter>
+    </HelmetProvider>
   )
 }

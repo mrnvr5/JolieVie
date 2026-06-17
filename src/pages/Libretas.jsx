@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet-async'
 import { useState } from 'react'
 import { useSearchParams } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
@@ -61,6 +62,10 @@ export default function Libretas() {
 
   return (
     <div className="max-w-7xl mx-auto px-4 py-12 animate-fade-in">
+      <Helmet>
+        <title>Libretas personalizadas de cuero | Jolie Vie Costa Rica</title>
+        <meta name="description" content="Libretas de cuero genuino personalizadas con tu nombre o diseño favorito. Pequeña, mediana y grande. Pedí la tuya en línea." />
+      </Helmet>
 
       {/* Product tabs */}
       <div className="grid grid-cols-2 md:flex md:flex-wrap gap-2 mb-8 md:mb-10 border-b border-blush/40 pb-4">
