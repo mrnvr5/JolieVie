@@ -1,0 +1,5 @@
+node_modules
+dist
+.env
+*.heic
+.DS_Store

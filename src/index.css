@@ -1,0 +1,57 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: 'Alegreya Sans', sans-serif;
+  background-color: #f2e7df;
+  color: #492c0d;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Cormorant Garamond looks best with slightly tighter tracking */
+.font-playfair {
+  letter-spacing: -0.01em;
+}
+
+/* Refined selection color */
+::selection {
+  background-color: #802d20;
+  color: #f2e7df;
+}
+
+/* Notebook preview size slider */
+.preview-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 80px;
+  height: 2px;
+  border-radius: 9999px;
+  background: #d4b89a;
+  outline: none;
+  cursor: pointer;
+}
+.preview-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #802d20;
+  border: 2px solid #f2e7df;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  transition: transform 0.15s;
+}
+.preview-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+.preview-slider::-moz-range-thumb {
+  width: 12px;
+  height: 12px;
+  border-radius: 9999px;
+  background: #802d20;
+  border: 2px solid #f2e7df;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.18);
+  cursor: pointer;
+}
