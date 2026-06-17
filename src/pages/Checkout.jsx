@@ -462,18 +462,20 @@ export default function Checkout() {
                 </div>
               )}
 
-              <div>
-                <label className="font-alegreya-sc text-sm text-brown block mb-1">Dirección de entrega</label>
-                <textarea
-                  {...register('address', { required: 'Por favor ingresá tu dirección' })}
-                  className="w-full border border-blush rounded-lg px-3 py-2 font-alegreya text-brown focus:outline-none focus:border-dark-red transition-colors resize-none"
-                  rows={3}
-                  placeholder={delivery === 'correos' ? 'Señas exactas para Correos (ej: 100m al norte de la iglesia...)' : 'Tu dirección completa para Uber Flash...'}
-                />
-                {errors.address && (
-                  <p className="text-terracotta text-xs mt-1">{errors.address.message}</p>
-                )}
-              </div>
+              {delivery === 'correos' && (
+                <div>
+                  <label className="font-alegreya-sc text-sm text-brown block mb-1">Dirección de entrega</label>
+                  <textarea
+                    {...register('address', { required: 'Por favor ingresá tu dirección' })}
+                    className="w-full border border-blush rounded-lg px-3 py-2 font-alegreya text-brown focus:outline-none focus:border-dark-red transition-colors resize-none"
+                    rows={3}
+                    placeholder="Señas exactas para Correos (ej: 100m al norte de la iglesia...)"
+                  />
+                  {errors.address && (
+                    <p className="text-terracotta text-xs mt-1">{errors.address.message}</p>
+                  )}
+                </div>
+              )}
             </>
           )}
 
