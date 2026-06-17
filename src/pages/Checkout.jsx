@@ -3,10 +3,13 @@ import { useState, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useNavigate } from 'react-router-dom'
 import confetti from 'canvas-confetti'
+import emailjs from '@emailjs/browser'
 import { useCart } from '../context/CartContext'
 import { PROVINCIAS, getcantones, getDistritos, getCodigoPostal } from '../data/costaRicaPostalCodes'
 
-const ORDERS_WEBHOOK_URL = 'https://script.google.com/macros/s/YOUR_ORDERS_SCRIPT_ID/exec'
+const EMAILJS_SERVICE_ID  = 'service_jql4rro'
+const EMAILJS_TEMPLATE_ID = 'template_wkh3ah3'
+const EMAILJS_PUBLIC_KEY  = 'zybHZjFGICJ5DvENn'
 
 const SINPE_NUMBER = '6048-9469'
 const SINPE_NAME   = 'Arlene Navarro'
@@ -117,15 +120,9 @@ export default function Checkout() {
     }
 
     try {
-      if (!ORDERS_WEBHOOK_URL.includes('YOUR_ORDERS_SCRIPT_ID')) {
-        await fetch(ORDERS_WEBHOOK_URL, {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(orderData),
-        })
-      }
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, orderData, EMAILJS_PUBLIC_KEY)
     } catch {
-      // webhook error — still confirm the order
+      // email error — still confirm the order
     } finally {
       clearCart()
       setSubmitted(true)
@@ -371,7 +368,7 @@ export default function Checkout() {
             </div>
           </div>
 
-          {delivery === 'recoger' && (
+          {(delivery === 'recoger' || delivery === 'uber') && (
             <div className="flex items-start gap-3 bg-blush/20 border border-blush rounded-lg px-4 py-4">
               <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5 text-dark-red flex-shrink-0 mt-0.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>

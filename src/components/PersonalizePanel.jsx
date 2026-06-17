@@ -100,6 +100,7 @@ export default function PersonalizePanel({ onChange, hideInserts = false, produc
 
   const MAX_GRABADO = 15
 
+  const isPassport = productId === 'portapasaporte'
   const has3LateralCharms = productId === 'mediana' || productId === 'grande'
 
   const notify = (update) => {
@@ -238,7 +239,9 @@ export default function PersonalizePanel({ onChange, hideInserts = false, produc
             />
           </div>
           <div>
-            <label className="font-alegreya text-xs text-brown/70 block mb-1">Charm N°1 costado</label>
+            <label className="font-alegreya text-xs text-brown/70 block mb-1">
+              {isPassport ? 'Charm costado' : 'Charm N°1 costado'}
+            </label>
             <input
               type="text"
               value={charm1Costado}
@@ -247,16 +250,18 @@ export default function PersonalizePanel({ onChange, hideInserts = false, produc
               className="w-full border border-blush rounded px-3 py-2 text-sm font-alegreya text-brown bg-white focus:outline-none focus:border-dark-red transition-colors"
             />
           </div>
-          <div>
-            <label className="font-alegreya text-xs text-brown/70 block mb-1">Charm N°2 costado</label>
-            <input
-              type="text"
-              value={charm2Costado}
-              onChange={(e) => { setCharm2Costado(e.target.value); notify({ charm2Costado: e.target.value }) }}
-              placeholder="Ej: C150"
-              className="w-full border border-blush rounded px-3 py-2 text-sm font-alegreya text-brown bg-white focus:outline-none focus:border-dark-red transition-colors"
-            />
-          </div>
+          {!isPassport && (
+            <div>
+              <label className="font-alegreya text-xs text-brown/70 block mb-1">Charm N°2 costado</label>
+              <input
+                type="text"
+                value={charm2Costado}
+                onChange={(e) => { setCharm2Costado(e.target.value); notify({ charm2Costado: e.target.value }) }}
+                placeholder="Ej: C150"
+                className="w-full border border-blush rounded px-3 py-2 text-sm font-alegreya text-brown bg-white focus:outline-none focus:border-dark-red transition-colors"
+              />
+            </div>
+          )}
           {has3LateralCharms && (
             <div>
               <label className="font-alegreya text-xs text-brown/70 block mb-1">Charm N°3 costado</label>
