@@ -23,6 +23,8 @@ const deliveryOptions = [
   { value: 'recoger', label: 'Paso a recogerlo', needsAddress: false },
 ]
 
+const CORREOS_FEE = 2000
+
 const ACCESSORIES = [
   { id: 'carpeta-pequena', label: 'Carpeta pequeña', price: 2000 },
   { id: 'carpeta-mediana', label: 'Carpeta mediana', price: 2000 },
@@ -86,6 +88,8 @@ export default function Checkout() {
     setCodigoPostal(code)
   }
 
+  const shippingFee = delivery === 'correos' ? CORREOS_FEE : 0
+
   const toggleAccessory = (id) => {
     setSelectedAccessories((prev) =>
       prev.includes(id) ? prev.filter((a) => a !== id) : [...prev, id]
@@ -116,7 +120,7 @@ export default function Checkout() {
       direccion: data.address || 'Paso a recogerlo',
       codigo_postal: codigoPostal || '',
       ubicacion: codigoPostal ? `${provincia} / ${canton} / ${distrito} (${codigoPostal})` : '',
-      total: `₡${total.toLocaleString()}`,
+      total: `₡${(total + selectedAccessories.reduce((s, id) => s + (ACCESSORIES.find(a => a.id === id)?.price ?? 0), 0) + shippingFee).toLocaleString()}`,
     }
 
     try {
@@ -220,9 +224,15 @@ export default function Checkout() {
                   <span>₡{selectedAccessories.reduce((s, id) => s + (ACCESSORIES.find(a => a.id === id)?.price ?? 0), 0).toLocaleString()}</span>
                 </div>
               )}
+              {shippingFee > 0 && (
+                <div className="flex justify-between font-alegreya text-brown/70 text-sm pt-1">
+                  <span>Envío (Correos de Costa Rica)</span>
+                  <span>₡{shippingFee.toLocaleString()}</span>
+                </div>
+              )}
               <div className="flex justify-between font-playfair font-bold text-brown pt-2 text-lg">
                 <span>Total</span>
-                <span className="text-dark-red">₡{(total + selectedAccessories.reduce((s, id) => s + (ACCESSORIES.find(a => a.id === id)?.price ?? 0), 0)).toLocaleString()}</span>
+                <span className="text-dark-red">₡{(total + selectedAccessories.reduce((s, id) => s + (ACCESSORIES.find(a => a.id === id)?.price ?? 0), 0) + shippingFee).toLocaleString()}</span>
               </div>
             </div>
           )}

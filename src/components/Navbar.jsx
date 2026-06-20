@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Link, useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
 const socialLinks = [
@@ -115,7 +115,6 @@ function IconClose() {
 
 export default function Navbar({ onSearchOpen }) {
   const { count, setIsOpen } = useCart()
-  const navigate = useNavigate()
   const [menuOpen, setMenuOpen] = useState(false)
 
   return (
@@ -142,13 +141,6 @@ export default function Navbar({ onSearchOpen }) {
 
         {/* Icons */}
         <div className="flex items-center gap-5 text-brown/60">
-          <button
-            onClick={() => { navigate('/login'); setMenuOpen(false) }}
-            className="hover:text-dark-red transition-colors"
-            aria-label="Mi cuenta"
-          >
-            <IconUser />
-          </button>
           <button
             onClick={onSearchOpen}
             className="hover:text-dark-red transition-colors"

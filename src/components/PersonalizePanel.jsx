@@ -102,6 +102,9 @@ export default function PersonalizePanel({ onChange, hideInserts = false, produc
 
   const isPassport = productId === 'portapasaporte'
   const has3LateralCharms = productId === 'mediana' || productId === 'grande'
+  const notebookOptions = productId === 'grande'
+    ? repuestoOptions.filter((o) => o.name !== 'Punteado')
+    : repuestoOptions
 
   const notify = (update) => {
     if (!onChange) return
@@ -190,19 +193,19 @@ export default function PersonalizePanel({ onChange, hideInserts = false, produc
             label="Cuaderno No. 1"
             value={notebook1}
             onChange={(v) => { setNotebook1(v); notify({ notebook1: v }) }}
-            options={repuestoOptions}
+            options={notebookOptions}
           />
           <NotebookSection
             label="Cuaderno No. 2"
             value={notebook2}
             onChange={(v) => { setNotebook2(v); notify({ notebook2: v }) }}
-            options={repuestoOptions}
+            options={notebookOptions}
           />
           <NotebookSection
             label="Cuaderno No. 3"
             value={notebook3}
             onChange={(v) => { setNotebook3(v); notify({ notebook3: v }) }}
-            options={repuestoOptions}
+            options={notebookOptions}
           />
         </>
       )}

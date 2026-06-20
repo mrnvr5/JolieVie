@@ -11,7 +11,6 @@ const searchItems = [
   { label: 'Libreta Grande (B5)', path: '/libretas', category: 'Producto' },
   { label: 'Agenda tu llamada', path: '/agenda', category: 'Página' },
   { label: 'Sobre nosotras', path: '/nosotras', category: 'Página' },
-  { label: 'Mi cuenta', path: '/login', category: 'Cuenta' },
   { label: 'Carrito y checkout', path: '/checkout', category: 'Compra' },
 ]
 
