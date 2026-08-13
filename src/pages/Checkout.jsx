@@ -109,12 +109,12 @@ export default function Checkout() {
 
     const productosDetalle = items
       .map((item, i) => {
-        const lines = [`<b>${i + 1}. ${item.name}</b> x${item.quantity}`]
+        const lines = [`${i + 1}. ${item.name} x${item.quantity}`]
         if (item.color) lines.push(`Color: ${item.color}`)
         if (item.customization) lines.push(`Personalización: ${item.customization}`)
-        return lines.join('<br>')
+        return lines.join('\n')
       })
-      .join('<br><br>')
+      .join('\n\n')
 
     const orderData = {
       timestamp: new Date().toISOString(),
