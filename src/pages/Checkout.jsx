@@ -124,7 +124,7 @@ export default function Checkout() {
       accesorios: accessoryLabels || 'Ninguno',
       cantidad: items.reduce((s, i) => s + i.quantity, 0),
       metodo_envio: delivery,
-      direccion: data.address || 'Paso a recogerlo',
+      direccion: data.address || (delivery === 'uber' ? 'Se coordina la ubicación por WhatsApp' : 'Paso a recogerlo'),
       codigo_postal: codigoPostal || '',
       ubicacion: codigoPostal ? `${provincia} / ${canton} / ${distrito} (${codigoPostal})` : '',
       total: `₡${(total + selectedAccessories.reduce((s, id) => s + (ACCESSORIES.find(a => a.id === id)?.price ?? 0), 0) + shippingFee).toLocaleString()}`,
