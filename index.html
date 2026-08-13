@@ -32,6 +32,9 @@
     <!-- Google puede indexar -->
     <meta name="robots" content="index, follow" />
 
+    <!-- LCP hero image — discovered by the browser before React ever renders the <img> -->
+    <link rel="preload" as="image" href="/portada1.jpg" fetchpriority="high" />
+
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />

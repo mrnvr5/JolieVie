@@ -6,7 +6,7 @@ export default function ProductCard({ name, description = '', productId, path, i
     <Link to={to} className="group block">
       <div className="w-full aspect-[3/4] bg-sage/30 overflow-hidden mb-4">
         {image
-          ? <img src={image} alt={name} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
+          ? <img src={image} alt={name} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
           : <div className="w-full h-full flex items-center justify-center transition-transform duration-500 group-hover:scale-105">
               <div className="w-1/3 h-1/2 bg-brown/10 border border-brown/15 rounded-sm" />
             </div>

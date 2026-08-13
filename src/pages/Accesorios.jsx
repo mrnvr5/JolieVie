@@ -41,7 +41,7 @@ function AccesorioCard({ acc }) {
     <div className="group flex flex-col">
       <div className="w-full aspect-[3/4] bg-sage/30 overflow-hidden mb-4 flex items-center justify-center transition-transform duration-500 group-hover:scale-[1.02]">
         {acc.image
-          ? <img src={acc.image} alt={acc.name} className={acc.contain ? 'w-full h-full object-contain p-6' : 'w-full h-full object-cover'} />
+          ? <img src={acc.image} alt={acc.name} loading="lazy" className={acc.contain ? 'w-full h-full object-contain p-6' : 'w-full h-full object-cover'} />
           : <div className="w-1/3 h-1/2 bg-brown/10 border border-brown/15 rounded-sm" />}
       </div>
       <div className="flex flex-col flex-1 gap-3">

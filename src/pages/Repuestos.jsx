@@ -80,7 +80,7 @@ function RepuestoCard({ repuesto }) {
   return (
     <div className="group flex flex-col">
       <div className="w-full aspect-square rounded-xl overflow-hidden mb-4">
-        <img src={repuesto.image} alt={repuesto.name} className="w-full h-full object-cover" />
+        <img src={repuesto.image} alt={repuesto.name} loading="lazy" className="w-full h-full object-cover" />
       </div>
 
       <div className="flex flex-col flex-1 gap-3">

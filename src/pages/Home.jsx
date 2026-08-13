@@ -96,7 +96,14 @@ export default function Home() {
       </Helmet>
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-center justify-center px-4 overflow-hidden">
-        <img src="/portada1.jpg" alt="" className="absolute inset-0 w-full h-full object-cover" />
+        <img
+          src="/portada1.jpg"
+          alt=""
+          fetchPriority="high"
+          loading="eager"
+          decoding="sync"
+          className="absolute inset-0 w-full h-full object-cover"
+        />
         <div className="absolute inset-0 bg-brown/40" />
 
         {/* Social icons — upper left */}
