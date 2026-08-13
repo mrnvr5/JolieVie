@@ -107,13 +107,20 @@ export default function Checkout() {
       .filter(Boolean)
       .join(', ')
 
+    const productosDetalle = items
+      .map((item, i) => {
+        const lines = [`<b>${i + 1}. ${item.name}</b> x${item.quantity}`]
+        if (item.color) lines.push(`Color: ${item.color}`)
+        if (item.customization) lines.push(`Personalización: ${item.customization}`)
+        return lines.join('<br>')
+      })
+      .join('<br><br>')
+
     const orderData = {
       timestamp: new Date().toISOString(),
       nombre: `${data.firstName} ${data.lastName1} ${data.lastName2 || ''}`.trim(),
       telefono: `+506 ${data.phone}`,
-      productos: items.map((i) => `${i.name} x${i.quantity}`).join(', '),
-      colores: items.map((i) => i.color).filter(Boolean).join(', '),
-      personalizacion: items.map((i) => i.customization).filter(Boolean).join(', '),
+      productos_detalle: productosDetalle,
       accesorios: accessoryLabels || 'Ninguno',
       cantidad: items.reduce((s, i) => s + i.quantity, 0),
       metodo_envio: delivery,
