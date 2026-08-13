@@ -7,6 +7,14 @@ export default function Nosotras() {
       <Helmet>
         <title>Nosotras | Jolie Vie</title>
         <meta name="description" content="Conocé la historia detrás de Jolie Vie, marca costarricense de libretas y accesorios de cuero personalizados." />
+        <link rel="canonical" href="https://jolieviecr.com/nosotras" />
+        <meta property="og:url" content="https://jolieviecr.com/nosotras" />
+        <meta property="og:title" content="Nosotras | Jolie Vie" />
+        <meta property="og:description" content="Conocé la historia detrás de Jolie Vie, marca costarricense de libretas y accesorios de cuero personalizados." />
+        <meta property="og:image" content="https://jolieviecr.com/nosotras.jpg" />
+        <meta name="twitter:title" content="Nosotras | Jolie Vie" />
+        <meta name="twitter:description" content="Conocé la historia detrás de Jolie Vie, marca costarricense de libretas y accesorios de cuero personalizados." />
+        <meta name="twitter:image" content="https://jolieviecr.com/nosotras.jpg" />
       </Helmet>
       <div className="max-w-5xl mx-auto px-4 py-12">
         <div className="text-center mb-14">

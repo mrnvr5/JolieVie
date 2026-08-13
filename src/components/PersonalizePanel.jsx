@@ -10,6 +10,7 @@ function ExpandableSection({ label, defaultOpen = false, children }) {
       <button
         type="button"
         onClick={() => setOpen(!open)}
+        aria-expanded={open}
         className="w-full flex justify-between items-center py-2 font-alegreya-sc text-sm text-brown hover:text-dark-red transition-colors"
       >
         {label}
@@ -33,6 +34,8 @@ function RepuestoSwatch({ option, selected, onSelect }) {
       type="button"
       onClick={() => onSelect(selected ? '' : option.name)}
       title={option.name}
+      aria-label={option.name}
+      aria-pressed={selected}
       className={`w-12 h-12 rounded-full flex-shrink-0 border-2 transition-all duration-200 flex items-center justify-center overflow-hidden ${
         selected
           ? 'ring-2 ring-offset-2 ring-brown scale-110 border-brown'

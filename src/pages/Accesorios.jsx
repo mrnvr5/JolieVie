@@ -68,6 +68,39 @@ export default function Accesorios() {
       <Helmet>
         <title>Accesorios de cuero | Jolie Vie Costa Rica</title>
         <meta name="description" content="Carpetas, cuadernos de acuarela y planificadores de cuero. Accesorios personalizados hechos en Costa Rica." />
+        <link rel="canonical" href="https://jolieviecr.com/accesorios" />
+        <meta property="og:url" content="https://jolieviecr.com/accesorios" />
+        <meta property="og:title" content="Accesorios de cuero | Jolie Vie Costa Rica" />
+        <meta property="og:description" content="Carpetas, cuadernos de acuarela y planificadores de cuero. Accesorios personalizados hechos en Costa Rica." />
+        <meta property="og:image" content="https://jolieviecr.com/planificador.jpg" />
+        <meta name="twitter:title" content="Accesorios de cuero | Jolie Vie Costa Rica" />
+        <meta name="twitter:description" content="Carpetas, cuadernos de acuarela y planificadores de cuero. Accesorios personalizados hechos en Costa Rica." />
+        <meta name="twitter:image" content="https://jolieviecr.com/planificador.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: accesorios.map((acc, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              item: {
+                '@type': 'Product',
+                name: acc.name,
+                description: acc.description,
+                image: `https://jolieviecr.com${acc.image}`,
+                url: 'https://jolieviecr.com/accesorios',
+                brand: { '@type': 'Brand', name: 'Jolie Vie' },
+                offers: {
+                  '@type': 'Offer',
+                  priceCurrency: 'CRC',
+                  price: acc.price,
+                  availability: 'https://schema.org/InStock',
+                  url: 'https://jolieviecr.com/accesorios',
+                },
+              },
+            })),
+          })}
+        </script>
       </Helmet>
       <div className="max-w-7xl mx-auto px-4 md:px-6 py-12 md:py-20">
 

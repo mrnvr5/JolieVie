@@ -3,6 +3,8 @@ export default function ColorSwatch({ color, selected, onSelect }) {
     <button
       onClick={() => onSelect(color.name)}
       title={color.name}
+      aria-label={color.name}
+      aria-pressed={selected}
       className={`w-8 h-8 rounded-full transition-all duration-200 flex-shrink-0 ${
         color.seasonal
           ? 'border-2 border-dashed border-brown/50'

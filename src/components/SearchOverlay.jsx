@@ -49,7 +49,7 @@ export default function SearchOverlay({ onClose }) {
       >
         {/* Input */}
         <div className="flex items-center gap-3 px-5 py-4 border-b border-blush/50">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" className="text-brown/50 flex-shrink-0">
+          <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5" className="text-brown/50 flex-shrink-0">
             <circle cx="11" cy="11" r="7" />
             <path strokeLinecap="round" d="M20 20l-3-3" />
           </svg>
@@ -58,9 +58,10 @@ export default function SearchOverlay({ onClose }) {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Buscar productos, páginas..."
+            aria-label="Buscar productos o páginas"
             className="flex-1 bg-transparent font-alegreya text-brown text-lg placeholder-brown/30 focus:outline-none"
           />
-          <button onClick={onClose} className="text-brown/40 hover:text-brown transition-colors font-alegreya-sc text-xs">
+          <button onClick={onClose} aria-label="Cerrar búsqueda" className="text-brown/40 hover:text-brown transition-colors font-alegreya-sc text-xs">
             ESC
           </button>
         </div>

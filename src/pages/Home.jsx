@@ -56,6 +56,43 @@ export default function Home() {
       <Helmet>
         <title>Jolie Vie | Libretas y accesorios personalizados en Costa Rica</title>
         <meta name="description" content="Libretas, agendas y accesorios de cuero personalizados hechos en Costa Rica. Enviamos por Correos de Costa Rica y Uber Flash." />
+        <link rel="canonical" href="https://jolieviecr.com/" />
+        <meta property="og:url" content="https://jolieviecr.com/" />
+        <meta property="og:title" content="Jolie Vie | Libretas y accesorios personalizados en Costa Rica" />
+        <meta property="og:description" content="Libretas, agendas y accesorios de cuero personalizados hechos en Costa Rica. Enviamos por Correos de Costa Rica y Uber Flash." />
+        <meta property="og:image" content="https://jolieviecr.com/portada1.jpg" />
+        <meta name="twitter:title" content="Jolie Vie | Libretas y accesorios personalizados en Costa Rica" />
+        <meta name="twitter:description" content="Libretas, agendas y accesorios de cuero personalizados hechos en Costa Rica. Enviamos por Correos de Costa Rica y Uber Flash." />
+        <meta name="twitter:image" content="https://jolieviecr.com/portada1.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'Organization',
+            name: 'Jolie Vie',
+            url: 'https://jolieviecr.com/',
+            logo: 'https://jolieviecr.com/joliejolie.png',
+            image: 'https://jolieviecr.com/portada1.jpg',
+            description: 'Libretas, agendas y accesorios de cuero personalizados hechos en Costa Rica.',
+            address: {
+              '@type': 'PostalAddress',
+              addressLocality: 'San Rafael de Montes de Oca',
+              addressCountry: 'CR',
+            },
+            contactPoint: {
+              '@type': 'ContactPoint',
+              telephone: '+506-8733-5115',
+              contactType: 'customer service',
+              areaServed: 'CR',
+              availableLanguage: 'Spanish',
+            },
+            sameAs: [
+              'https://wa.me/50687335115',
+              'https://www.instagram.com/jolievie.cr',
+              'https://www.tiktok.com/@jolievie.cr',
+              'https://www.facebook.com/jolievie.cr/',
+            ],
+          })}
+        </script>
       </Helmet>
       {/* Hero */}
       <section className="relative min-h-[72vh] flex items-center justify-center px-4 overflow-hidden">

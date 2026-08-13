@@ -129,6 +129,43 @@ export default function Repuestos() {
       <Helmet>
         <title>Repuestos para libretas | Jolie Vie Costa Rica</title>
         <meta name="description" content="Repuestos y recargas para tus libretas Jolie Vie. Hojas lisas, rayadas y más." />
+        <link rel="canonical" href="https://jolieviecr.com/repuestos" />
+        <meta property="og:url" content="https://jolieviecr.com/repuestos" />
+        <meta property="og:title" content="Repuestos para libretas | Jolie Vie Costa Rica" />
+        <meta property="og:description" content="Repuestos y recargas para tus libretas Jolie Vie. Hojas lisas, rayadas y más." />
+        <meta property="og:image" content="https://jolieviecr.com/liso.jpg" />
+        <meta name="twitter:title" content="Repuestos para libretas | Jolie Vie Costa Rica" />
+        <meta name="twitter:description" content="Repuestos y recargas para tus libretas Jolie Vie. Hojas lisas, rayadas y más." />
+        <meta name="twitter:image" content="https://jolieviecr.com/liso.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: repuestoTypes.map((r, i) => {
+              const prices = [r.a6Price, r.a5Price, r.b5Price].filter(Boolean)
+              return {
+                '@type': 'ListItem',
+                position: i + 1,
+                item: {
+                  '@type': 'Product',
+                  name: `Repuesto ${r.name}`,
+                  description: r.description,
+                  image: `https://jolieviecr.com${r.image}`,
+                  url: 'https://jolieviecr.com/repuestos',
+                  brand: { '@type': 'Brand', name: 'Jolie Vie' },
+                  offers: {
+                    '@type': 'AggregateOffer',
+                    priceCurrency: 'CRC',
+                    lowPrice: Math.min(...prices),
+                    highPrice: Math.max(...prices),
+                    offerCount: prices.length,
+                    availability: 'https://schema.org/InStock',
+                  },
+                },
+              }
+            }),
+          })}
+        </script>
       </Helmet>
       <div className="mb-8 md:mb-12">
         <p className="font-alegreya-sc font-bold text-brown/50 text-xs tracking-widest uppercase mb-2">Recargas</p>

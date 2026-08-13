@@ -20,8 +20,16 @@ export default function Agenda() {
   return (
     <div className="max-w-6xl mx-auto px-4 py-12 animate-fade-in">
       <Helmet>
-        <title>Agendas personalizadas | Jolie Vie Costa Rica</title>
-        <meta name="description" content="Agendas de cuero personalizadas hechas en Costa Rica. Organizá tu vida con estilo." />
+        <title>Agendá tu videollamada de diseño | Jolie Vie Costa Rica</title>
+        <meta name="description" content="Agendá una videollamada gratuita de 30 minutos para diseñar tu libreta de cuero personalizada junto a nosotras, sin compromiso de compra." />
+        <link rel="canonical" href="https://jolieviecr.com/agenda" />
+        <meta property="og:url" content="https://jolieviecr.com/agenda" />
+        <meta property="og:title" content="Agendá tu videollamada de diseño | Jolie Vie Costa Rica" />
+        <meta property="og:description" content="Agendá una videollamada gratuita de 30 minutos para diseñar tu libreta de cuero personalizada junto a nosotras, sin compromiso de compra." />
+        <meta property="og:image" content="https://jolieviecr.com/agenda.jpg" />
+        <meta name="twitter:title" content="Agendá tu videollamada de diseño | Jolie Vie Costa Rica" />
+        <meta name="twitter:description" content="Agendá una videollamada gratuita de 30 minutos para diseñar tu libreta de cuero personalizada junto a nosotras, sin compromiso de compra." />
+        <meta name="twitter:image" content="https://jolieviecr.com/agenda.jpg" />
       </Helmet>
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start">
         {/* Left — Photo */}

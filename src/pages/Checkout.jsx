@@ -190,6 +190,8 @@ export default function Checkout() {
       <Helmet>
         <title>Confirmar pedido | Jolie Vie</title>
         <meta name="description" content="Completá tu pedido de libretas y accesorios Jolie Vie." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://jolieviecr.com/checkout" />
       </Helmet>
       <h1 className="font-playfair text-3xl font-bold text-brown mb-8">Confirmar pedido</h1>
 
@@ -387,16 +389,11 @@ export default function Checkout() {
               <div>
                 <p className="font-alegreya-sc text-xs text-brown/50 uppercase tracking-widest mb-1">Dirección de retiro</p>
                 <p className="font-alegreya text-brown text-sm leading-relaxed">
-                  De la Iglesia Evangélica Metodista Faro del Este, 50 metros norte, frente a Green Minds Eco Kinder.
+                  San Rafael de Montes de Oca, se indicará la ubicación exacta al coordinar la entrega.
                 </p>
-                <a
-                  href="https://maps.app.goo.gl/gCpcdwsRGag6RAqp6?g_st=ic"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1 font-alegreya-sc text-xs text-dark-red underline underline-offset-2 hover:text-brown transition-colors mt-2"
-                >
-                  Ver en Google Maps →
-                </a>
+                <p className="font-alegreya text-brown text-sm leading-relaxed mt-2">
+                  Horario de entrega: 8am a 5pm.
+                </p>
               </div>
             </div>
           )}

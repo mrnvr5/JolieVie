@@ -64,7 +64,7 @@ function BrandLogo() {
 
 function IconUser() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
       <circle cx="12" cy="8" r="4" />
       <path strokeLinecap="round" d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
     </svg>
@@ -73,7 +73,7 @@ function IconUser() {
 
 function IconSearch() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
       <circle cx="11" cy="11" r="7" />
       <path strokeLinecap="round" d="M20 20l-3-3" />
     </svg>
@@ -83,7 +83,7 @@ function IconSearch() {
 function IconBag({ count }) {
   return (
     <span className="relative">
-      <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
         <path strokeLinecap="round" strokeLinejoin="round" d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z" />
         <path strokeLinecap="round" d="M3 6h18" />
         <path strokeLinecap="round" d="M16 10a4 4 0 01-8 0" />
@@ -99,7 +99,7 @@ function IconBag({ count }) {
 
 function IconMenu() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
       <path strokeLinecap="round" d="M4 6h16M4 12h16M4 18h16" />
     </svg>
   )
@@ -107,7 +107,7 @@ function IconMenu() {
 
 function IconClose() {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
+    <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="21" height="21" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="1.5">
       <path strokeLinecap="round" d="M6 6l12 12M18 6l-12 12" />
     </svg>
   )

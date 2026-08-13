@@ -42,8 +42,11 @@ export default function Login() {
       <Helmet>
         <title>Mi cuenta | Jolie Vie</title>
         <meta name="description" content="Iniciá sesión o creá tu cuenta en Jolie Vie." />
+        <meta name="robots" content="noindex, follow" />
+        <link rel="canonical" href="https://jolieviecr.com/login" />
       </Helmet>
       <div className="bg-white rounded-2xl shadow-xl w-full max-w-md p-8">
+        <h1 className="sr-only">Mi cuenta | Jolie Vie</h1>
         {/* Logo */}
         <div className="text-center mb-6">
           <img

@@ -25,6 +25,7 @@ export default function CartSidebar() {
             <h2 className="font-playfair text-xl font-bold text-brown">Tu carrito</h2>
             <button
               onClick={() => setIsOpen(false)}
+              aria-label="Cerrar carrito"
               className="text-brown hover:text-dark-red text-2xl leading-none"
             >
               ×
@@ -48,6 +49,7 @@ export default function CartSidebar() {
                     </div>
                     <button
                       onClick={() => removeItem(i)}
+                      aria-label={`Eliminar ${item.name} del carrito`}
                       className="text-brown/30 hover:text-dark-red text-xl leading-none ml-2"
                     >
                       ×
@@ -57,6 +59,7 @@ export default function CartSidebar() {
                     <div className="flex items-center gap-2">
                       <button
                         onClick={() => updateQuantity(i, item.quantity - 1)}
+                        aria-label={`Disminuir cantidad de ${item.name}`}
                         className="w-6 h-6 rounded border border-blush text-brown hover:bg-blush transition-colors text-sm"
                       >
                         −
@@ -64,6 +67,7 @@ export default function CartSidebar() {
                       <span className="text-sm font-alegreya w-4 text-center">{item.quantity}</span>
                       <button
                         onClick={() => updateQuantity(i, item.quantity + 1)}
+                        aria-label={`Aumentar cantidad de ${item.name}`}
                         className="w-6 h-6 rounded border border-blush text-brown hover:bg-blush transition-colors text-sm"
                       >
                         +

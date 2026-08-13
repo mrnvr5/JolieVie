@@ -1,5 +1,5 @@
 import { useMemo, useState, useRef, useEffect } from 'react'
-import { extendedCoverColors, cordonColors } from '../data/colors'
+import { coverColors, extendedCoverColors, cordonColors } from '../data/colors'
 
 function darken(hex, amount = 40) {
   const r = Math.max(0, parseInt(hex.slice(1, 3), 16) - amount)
@@ -64,9 +64,10 @@ export default function NotebookPreview({ selectedColorName, cordonName, grabado
     dragging.current = true
   }
 
+  const availableCoverColors = productId === 'grande' ? coverColors : extendedCoverColors
   const coverColor = useMemo(
-    () => extendedCoverColors.find((c) => c.name === selectedColorName) ?? extendedCoverColors[2],
-    [selectedColorName]
+    () => availableCoverColors.find((c) => c.name === selectedColorName) ?? availableCoverColors[2],
+    [selectedColorName, availableCoverColors]
   )
   const coverHex = coverColor.hex
   const coverTexture = coverColor.texture ?? null
@@ -137,6 +138,7 @@ export default function NotebookPreview({ selectedColorName, cordonName, grabado
 
         <button
           onClick={onClose}
+          aria-label="Cerrar vista previa"
           className="text-brown/40 hover:text-brown transition-colors text-xl leading-none font-light w-6 h-6 flex items-center justify-center"
         >×</button>
       </div>

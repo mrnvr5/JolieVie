@@ -13,7 +13,7 @@ const faqs = [
   },
   {
     q: '¿Cómo es la entrega?',
-    a: 'Hacemos envíos por Correos de Costa Rica por un adicional de ₡2.000 para el GAM y ₡2.500 fuera del GAM. También hacemos entregas personales o por Uber Flash en San Rafael de Montes de Oca.',
+    a: 'Hacemos envíos por Correos de Costa Rica por un adicional de ₡2.000 para el GAM y ₡2.500 fuera del GAM. También hacemos entregas personales o por Uber Flash en San Rafael de Montes de Oca. El horario de entrega es de 8am a 5pm.',
   },
   {
     q: '¿Tienen tienda física?',
@@ -28,6 +28,7 @@ function FAQItem({ q, a }) {
       <button
         type="button"
         onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
         className="w-full flex justify-between items-center py-5 text-left font-playfair text-lg text-brown hover:text-dark-red transition-colors"
       >
         {q}
@@ -48,6 +49,14 @@ export default function FAQ() {
       <Helmet>
         <title>Preguntas frecuentes | Jolie Vie</title>
         <meta name="description" content="Resolvemos tus dudas sobre pedidos, personalización, envíos y métodos de pago de Jolie Vie." />
+        <link rel="canonical" href="https://jolieviecr.com/faq" />
+        <meta property="og:url" content="https://jolieviecr.com/faq" />
+        <meta property="og:title" content="Preguntas frecuentes | Jolie Vie" />
+        <meta property="og:description" content="Resolvemos tus dudas sobre pedidos, personalización, envíos y métodos de pago de Jolie Vie." />
+        <meta property="og:image" content="https://jolieviecr.com/faq-vertical.jpg" />
+        <meta name="twitter:title" content="Preguntas frecuentes | Jolie Vie" />
+        <meta name="twitter:description" content="Resolvemos tus dudas sobre pedidos, personalización, envíos y métodos de pago de Jolie Vie." />
+        <meta name="twitter:image" content="https://jolieviecr.com/faq-vertical.jpg" />
       </Helmet>
       <div className="grid md:grid-cols-2 gap-6 md:gap-12 items-start">
 

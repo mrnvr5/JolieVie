@@ -51,6 +51,14 @@ export default function Contacto() {
       <Helmet>
         <title>Contacto | Jolie Vie</title>
         <meta name="description" content="Escribinos por WhatsApp o redes sociales. Estamos para ayudarte con tu pedido de Jolie Vie." />
+        <link rel="canonical" href="https://jolieviecr.com/contacto" />
+        <meta property="og:url" content="https://jolieviecr.com/contacto" />
+        <meta property="og:title" content="Contacto | Jolie Vie" />
+        <meta property="og:description" content="Escribinos por WhatsApp o redes sociales. Estamos para ayudarte con tu pedido de Jolie Vie." />
+        <meta property="og:image" content="https://jolieviecr.com/portada1.jpg" />
+        <meta name="twitter:title" content="Contacto | Jolie Vie" />
+        <meta name="twitter:description" content="Escribinos por WhatsApp o redes sociales. Estamos para ayudarte con tu pedido de Jolie Vie." />
+        <meta name="twitter:image" content="https://jolieviecr.com/portada1.jpg" />
       </Helmet>
       <div className="mb-12">
         <h1 className="font-playfair text-3xl font-bold text-brown mb-2">Contacto</h1>

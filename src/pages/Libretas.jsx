@@ -65,6 +65,39 @@ export default function Libretas() {
       <Helmet>
         <title>Libretas personalizadas de cuero | Jolie Vie Costa Rica</title>
         <meta name="description" content="Libretas de cuero genuino personalizadas con tu nombre o diseño favorito. Pequeña, mediana y grande. Pedí la tuya en línea." />
+        <link rel="canonical" href="https://jolieviecr.com/libretas" />
+        <meta property="og:url" content="https://jolieviecr.com/libretas" />
+        <meta property="og:title" content="Libretas personalizadas de cuero | Jolie Vie Costa Rica" />
+        <meta property="og:description" content="Libretas de cuero genuino personalizadas con tu nombre o diseño favorito. Pequeña, mediana y grande. Pedí la tuya en línea." />
+        <meta property="og:image" content="https://jolieviecr.com/grande.jpg" />
+        <meta name="twitter:title" content="Libretas personalizadas de cuero | Jolie Vie Costa Rica" />
+        <meta name="twitter:description" content="Libretas de cuero genuino personalizadas con tu nombre o diseño favorito. Pequeña, mediana y grande. Pedí la tuya en línea." />
+        <meta name="twitter:image" content="https://jolieviecr.com/grande.jpg" />
+        <script type="application/ld+json">
+          {JSON.stringify({
+            '@context': 'https://schema.org',
+            '@type': 'ItemList',
+            itemListElement: products.map((p, i) => ({
+              '@type': 'ListItem',
+              position: i + 1,
+              item: {
+                '@type': 'Product',
+                name: `Libreta ${p.name}`,
+                description: p.description,
+                image: `https://jolieviecr.com${p.image}`,
+                url: `https://jolieviecr.com/libretas?product=${p.id}`,
+                brand: { '@type': 'Brand', name: 'Jolie Vie' },
+                offers: {
+                  '@type': 'Offer',
+                  priceCurrency: 'CRC',
+                  price: p.price,
+                  availability: 'https://schema.org/InStock',
+                  url: `https://jolieviecr.com/libretas?product=${p.id}`,
+                },
+              },
+            })),
+          })}
+        </script>
       </Helmet>
 
       {/* Product tabs */}
